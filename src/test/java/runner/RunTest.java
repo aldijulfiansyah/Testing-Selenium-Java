@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
     features = "src/test/resources/features",
     glue = "stepDef",
-    tags = "@TDDRegister",
+    tags = "@BDDRegister1 or @BDDRegister2",
     plugin = {"pretty", "html:target/RegressionReport.html"}
 )
 

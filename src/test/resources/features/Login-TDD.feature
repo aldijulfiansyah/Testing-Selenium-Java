@@ -1,6 +1,6 @@
 Feature: Login with TDD
 
-  @TDD
+  @LoginTDD
   Scenario Outline: Login with TDD
     Given User already in login page
     When User input <username> and <password>

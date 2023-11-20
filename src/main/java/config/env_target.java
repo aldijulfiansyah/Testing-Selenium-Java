@@ -5,6 +5,6 @@ import org.openqa.selenium.WebDriver;
 public class env_target {
     protected WebDriver driver;
     protected String baseUrl = "https://www.saucedemo.com/";
-    protected String ultimateQALink = "https://courses.ultimateqa.com/users/sign_up";
+    protected String lambdaTest = "https://ecommerce-playground.lambdatest.io/index.php?route=account/register";
 
 }

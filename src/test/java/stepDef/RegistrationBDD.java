@@ -21,47 +21,55 @@ public class RegistrationBDD extends env_target{
         driver.manage().window().maximize();
 
         // set link
-        driver.get(ultimateQALink);
+        driver.get(lambdaTest);
 
         //set time
 
         Duration duration = Duration.ofSeconds(10);
         WebDriverWait wait = new WebDriverWait(driver, duration);
         wait.until(
-                ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[@class = \"page__heading\"][contains(text(), \"Create a new account\")]"))
+                ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[contains(  text(), \"Register Account\")]"))
         );
     }
 
     @Then("User fill registration form")
     public void userFillRegistrationForm() {
-        driver.findElement(By.id("user[first_name]")).sendKeys("Ronissdd");
-        driver.findElement(By.id("user[last_name]")).sendKeys("sandmawwn");
-        driver.findElement(By.id("user[email]")).sendKeys("Ronidsdd@gg.cocom");
-        driver.findElement(By.id("user[password]")).sendKeys("Californias");
-        driver.findElement(By.id("user[terms]")).click();
+        driver.findElement(By.id("input-firstname")).sendKeys("kylian");
+        driver.findElement(By.id("input-lastname")).sendKeys("mbappes");
+        driver.findElement(By.id("input-email")).sendKeys("mbappeas@abdc.com");
+        driver.findElement(By.id("input-telephone")).sendKeys("628938333");
+        driver.findElement(By.id("input-password")).sendKeys("user2323");
+        driver.findElement(By.id("input-confirm")).sendKeys("user2323");
+
+        driver.findElement(By.xpath("//label[text()='Yes']")).click();
+        driver.findElement(By.xpath("//label[contains(text(),'I have read and agree to')]")).click();
     }
 
     @Then("User fill invalid registration form")
     public void userFillInvalidRegistrationForm() {
-        driver.findElement(By.id("user[first_name]")).sendKeys("123");
-        driver.findElement(By.id("user[last_name]")).sendKeys("222");
-        driver.findElement(By.id("user[email]")).sendKeys("33");
-        driver.findElement(By.id("user[password]")).sendKeys("s");
-        driver.findElement(By.id("user[terms]")).click();
+        driver.findElement(By.id("input-firstname")).sendKeys("kylian");
+        driver.findElement(By.id("input-lastname")).sendKeys("mbappes");
+        driver.findElement(By.id("input-email")).sendKeys("mbappeas@abdc.com");
+        driver.findElement(By.id("input-telephone")).sendKeys("628938333");
+        driver.findElement(By.id("input-password")).sendKeys("user2123");
+        driver.findElement(By.id("input-confirm")).sendKeys("user2323");
+
+        driver.findElement(By.xpath("//label[text()='Yes']")).click();
+        driver.findElement(By.xpath("//label[contains(text(),'I have read and agree to')]")).click();
     }
 
     @And("User click sign up button")
     public void userClickSignUpButton() {
-        driver.findElement(By.xpath("//button[@type = \"submit\"][contains(text(), \"Sign up\")]")).click();
+        driver.findElement(By.xpath("//input[@type = \"submit\"]")).click();
     }
 
-    @Then("User verify registration result")
-    public void userVerifyRegistrationResult() {
+    @Then("User succes register as expected")
+    public void userVerifyRegistrationAsExpected() {
 
         Duration duration = Duration.ofSeconds(10);
         WebDriverWait wait = new WebDriverWait(driver, duration);
         wait.until(
-                ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[contains(text(), \"Products\")]"))
+                ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[contains( text(), \"Congratulations! Your new account has been successfully created!\")]"))
         );
 
         driver.quit();
@@ -73,7 +81,7 @@ public class RegistrationBDD extends env_target{
         Duration duration = Duration.ofSeconds(10);
         WebDriverWait wait = new WebDriverWait(driver, duration);
         wait.until(
-                ExpectedConditions.visibilityOfElementLocated(By.className("form-error__list-item"))
+                ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class, 'text-danger')]"))
         );
 
         driver.quit();

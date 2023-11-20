@@ -18,7 +18,7 @@ public class Register extends env_target {
         driver.manage().window().maximize();
 
         // set link
-        driver.get(ultimateQALink);
+        driver.get(lambdaTest);
 
         //set time
 
@@ -57,7 +57,7 @@ public class Register extends env_target {
         driver.manage().window().maximize();
 
         // set link
-        driver.get(ultimateQALink);
+        driver.get(lambdaTest);
 
         //set time
 
