@@ -50,6 +50,6 @@
 
 
 ## Notes
-- Make sure your chrome & chromedriver version same
+- Make sure your chrome & chromedriver version are same
 - Put chromedriver on a package
-- Call it on stepdefinition package -> *System.setProperty("**path to your chromedriver**");*
+- Call it on stepDef package -> *System.setProperty("**path to your chromedriver**");*
