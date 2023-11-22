@@ -47,3 +47,9 @@
 ## 🐛 Dummy Website Source
 - [Swag Labs](https://www.saucedemo.com) as login scenario
 - [Lambda Test](https://ecommerce-playground.lambdatest.io/index.php?route=account/register) as register scenario
+
+
+## Notes
+- Make sure your chrome & chromedriver version same
+- Put chromedriver on a package
+- Call it on stepdefinition package -> *System.setProperty("**path to your chromedriver**");*
